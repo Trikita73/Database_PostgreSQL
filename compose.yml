@@ -1,0 +1,16 @@
+version: '1.0.2'
+
+services:
+
+  postgres:
+    container_name: first_postgres
+    image: postgres:16.1
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: sql_postgres
+    volumes:
+      - ./volume/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
